@@ -1,19 +1,53 @@
 {
-  "name": "broccoli-base64-css",
+  "name": "@yapplabs/broccoli-base64-css",
   "version": "0.0.5",
   "description": "Replace references to images in CSS with base64 strings",
-  "repository": "https://github.com/moudy/broccoli-base64-css",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "broccoli-plugin",
     "css"
   ],
-  "author": "Moudy",
+  "repository": "https://github.com/yapplabs/broccoli-base64-css",
   "license": "MIT",
+  "author": "Moudy",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "release": "release-it",
+    "test": "mocha tests",
+    "test:debug": "mocha debug tests",
+    "test:lint": "mocha tests/lint.js",
+    "test:watch": "testem"
+  },
   "dependencies": {
-    "broccoli-filter": "^0.1.6"
+    "broccoli-persistent-filter": "^3.0.0"
+  },
+  "devDependencies": {
+    "broccoli-test-helper": "^2.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "mocha-eslint": "^6.0.0",
+    "release-it": "^13.6.0",
+    "release-it-lerna-changelog": "^2.3.0",
+    "testem": "^3.2.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": false
+      }
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    }
   }
 }
