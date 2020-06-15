@@ -1,6 +1,6 @@
 {
   "name": "@yapplabs/broccoli-base64-css",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Replace references to images in CSS with base64 strings",
   "keywords": [
     "broccoli-plugin",
